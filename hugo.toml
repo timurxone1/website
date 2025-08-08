@@ -1,0 +1,71 @@
+baseURL = 'https://www.oktrik.com/'
+title = 'Oktrik'
+languageCode = 'id-ID'
+theme = 'pehtheme-hugo'
+canonifyURLs = true
+relativeURLs = true
+paginatePath = "laman"
+sitemapExclude = true
+enableGitInfo = true
+
+[frontmatter]
+date = ["date", "publishDate", "lastmod"]
+lastmod = ["lastmod", ":git", "date", "publishDate"]
+publishDate = ["publishDate", "date"]
+expiryDate = ["expiryDate"]
+
+
+
+paginate = '13' # <- Set the desired number of posts per page 
+summaryLength = '30' # <- 20 words are approximately 160 characters
+googleAnalytics = 'G-MEASUREMENT_ID' # <- Your GA-4
+disqusShortname = 'your-disqus-shortname' # <- Get form here : https://disqus.com
+
+[params]
+	# Meta description, not exceeding 160 characters, used for the meta description within the HTML head
+	description = 'Blog yang membahas beragam topik secara mendalam dan menarik'
+	mainSections = 'posts'
+	taxonomiesExcludedFromSitemap = ["tags", "categories"]
+	author = "rosari j"
+    logo = "/path/to/logo.jpg"
+    header = "oktrik"
+	environment = "production"
+	
+[author]
+name = "rosari j"
+bio = """
+Rosari J adalah seorang penulis teknologi di oktrik.com yang bersemangat untuk berbagi pengetahuan dan wawasannya tentang dunia digital. Dengan pengalaman bertahun-tahun dalam bidang ini, dia memiliki keahlian dalam perangkat lunak, perangkat keras, dan internet, serta berkomitmen untuk memberikan konten teknologi berkualitas tinggi dan relevan kepada para pembaca. Visi Rosari adalah menjadikan oktrik.com sebagai sumber informasi teknologi terdepan di Indonesia.
+
+Temui Rosari J di media sosial:
+"""
+avatar = "/images/avatar.jpg"
+twitter = "https://twitter.com/insertapps"
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Posts'
+pageRef = '/posts'
+weight = 20
+
+[[menus.main]]
+name = 'Tags'
+pageRef = '/tags'
+weight = 30
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.116.0"
+  [module.mounts] # Directing the static folder to assets.
+  	source = 'assets'
+  	target = 'static'
+
+[sitemap]
+  changeFreq = ''
+  disable = false
+  filename = 'petas.xml'
+  priority = 0.8
